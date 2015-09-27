@@ -28,4 +28,32 @@ if ( is_plugin_active( 'woocommerce-autoship/woocommerce-autoship.php' ) ) {
 	}
 	register_uninstall_hook( __FILE__, 'wc_autoship_fees_example_uninstall' );
 	
+	function wc_autoship_fees_example_add_fees( $fees, $schedule_id ) {
+		// Get the autoship schedule
+		$schedule = new WC_Autoship_Schedule( $schedule_id );
+		
+		// Add a fee for each autoship schedule item
+		$items = $schedule->get_items();
+		foreach ( $items as $i => $item ) {
+			// Get the WooCommerce product
+			$product = $item->get_product();
+			if ( ! empty( $product ) ) {
+				// Create a fee for the product
+				$fee = new stdClass();
+				$fee->id = "wc_autoship_example_fee_{$i}";
+				$fee->name = $product->get_title() . ' Fee';
+				$fee->amount = 5.99;
+				$fee->tax_class = '';
+				$fee->taxable = false;
+				$fee->tax = 0;
+				$fee->tax_data = array();
+				// Append the fee
+				$fees[] = $fee;
+			}
+		}
+		
+		// Return fees
+		return $fees;
+	}
+	add_filter( 'wc_autoship_schedule_fees', 'wc_autoship_fees_example_add_fees', 10, 3 );
 }
