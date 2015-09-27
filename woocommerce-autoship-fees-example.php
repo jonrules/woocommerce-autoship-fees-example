@@ -9,7 +9,7 @@ Author URI: http://patternsinthecloud.com
 License: Single-site
 */
 
-define( 'WC_AUTOSHIP_FEES_EXAMPLE', '1.0.0' );
+define( 'WC_Autoship_Fees_Example_Version', '1.0.0' );
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 if ( is_plugin_active( 'woocommerce-autoship/woocommerce-autoship.php' ) ) {
