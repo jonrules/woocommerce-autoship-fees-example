@@ -55,5 +55,5 @@ if ( is_plugin_active( 'woocommerce-autoship/woocommerce-autoship.php' ) ) {
 		// Return fees
 		return $fees;
 	}
-	add_filter( 'wc_autoship_schedule_fees', 'wc_autoship_fees_example_add_fees', 10, 3 );
+	add_filter( 'wc_autoship_schedule_fees', 'wc_autoship_fees_example_add_fees', 10, 2 );
 }
