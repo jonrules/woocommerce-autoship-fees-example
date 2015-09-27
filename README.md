@@ -1,3 +1,3 @@
 # WC Auto-Ship Fees Example
-Add custom fees to autoship orders
+Example plugin showing how to add custom fees to autoship orders
 

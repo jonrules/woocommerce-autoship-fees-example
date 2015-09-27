@@ -2,7 +2,7 @@
 /*
 Plugin Name: WC Auto-Ship Fees Example
 Plugin URI: http://wooautoship.com
-Description: Add custom fees to autoship orders
+Description: Example plugin showing how to add custom fees to autoship orders
 Version: 1.0
 Author: Patterns in the Cloud
 Author URI: http://patternsinthecloud.com
